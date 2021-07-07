@@ -10,33 +10,20 @@
     --fw-light: 300;
     --fw-bold: 400;
 
-    --fs-h1: 4.5em;
+    --fs-h1: 3.5em;
     --fs-h2: 1.25em;
+    --fs-body: 1.15em;
 }
 
-body {
-    background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ),
-        url(backgrounds/gc_day_horizontal_1.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    padding: 1rem;
+/*  My Desktop  1920x1080px */
+@media only screen and (min-width: 1920px) and (min-height: 926px) {
+    :root {
+        --fs-body: 1.5em;
+    }
 }
 
-header {
-    text-align: center;
-}
-
-.container {
-    background-color: var(--zonebg);
-    color: white;
-    display: inline-block;
-    border-radius: 7px;
-    margin-top: 15vh;
-    margin-bottom: 5vh;
-    padding: 0 100px;
-    max-width: 500px;
+a {
+    text-decoration: none;
 }
 
 h1 {
@@ -49,18 +36,60 @@ h2 {
     font-weight: var(--fw-xlight);
 }
 
+body {
+    /*
+    background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ),
+        url(backgrounds/Morning.jpg) no-repeat center center fixed;   MORNING */
+    /*background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ),
+        url(backgrounds/gc_day_horizontal_1.jpg) no-repeat center center fixed;
+    /*background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ),
+        url(backgrounds/NightCity.jpg) no-repeat bottom center fixed;       NIGHT*/
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding: 1rem;
+    font-size: var(--fs-body);
+}
+
+.multiply {
+    mix-blend-mode: multiply;
+}
+
+.screen {
+    mix-blend-mode: screen;
+}
+
+.overlay {
+    mix-blend-mode: overlay;
+}
+
+.hard-light {
+    mix-blend-mode:hard-light;
+}
+
+.centered {
+    text-align: center;
+}
+
+.container {
+    background-color: var(--zonebg);
+    color: white;
+    display: inline-block;
+    border-radius: 7px;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    padding: 0 100px;
+    max-width: 40vw;
+}
+
 .zone-wrapper {
-    max-width: 1200px;
+    max-width: 70vw;
     margin: 0 auto;
     display: grid;
     gap: 3rem;
     text-align: center;
-}
-
-@media (min-width: 600px) {
-    .zone-wrapper {
-        grid-template-columns: repeat(3, 1fr);
-    }
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 .zone {
@@ -70,10 +99,13 @@ h2 {
     padding: 1rem;
     font-family: var(--ff);
     font-weight: var(--fw-bold);
+    mix-blend-mode: hard-light;
+    transition-duration: .5s;
 }
+
 
 .zone:hover {
     -webkit-transform: scale(1.05);
     -ms-transform: scale(1.05);
-    transform: scale(1.05);   
+    transform: scale(1.03);   
 }
