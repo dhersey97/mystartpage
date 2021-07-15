@@ -10,9 +10,10 @@
     --fw-light: 300;
     --fw-bold: 400;
 
-    --fs-h1: 2.5em;
+    --fs-h1: 2em;
     --fs-h2: 1.25em;
     --fs-body: 1.15em;
+    --fs-search: 1em;
 }
 
 
@@ -31,18 +32,10 @@ h2 {
 }
 
 body {
-    /*
-    background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ),
-        url(backgrounds/Morning.jpg) no-repeat center center fixed;   MORNING */
-    /*background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ),
-        url(backgrounds/gc_day_horizontal_1.jpg) no-repeat center center fixed;
-    /*background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ),
-        url(backgrounds/NightCity.jpg) no-repeat bottom center fixed;       NIGHT*/
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    padding: 1rem;
     font-size: var(--fs-body);
 }
 
@@ -72,16 +65,57 @@ body {
     display: inline-block;
     border-radius: 7px;
     margin-top: 1vh;
-    margin-bottom: 5vh;
+    margin-bottom: 2vh;
     padding: 0 100px;
     max-width: 40vw;
+}
+
+.search-bar-container {
+    margin-bottom: 5vh;
+    margin-left: 30vw;
+    margin-right: 30vw;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: var(--zonebg);
+    mix-blend-mode: hard-light;
+}
+
+form{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.searchbar {
+    float: right;
+    background-color: transparent;
+    border: none;
+    border-bottom: white solid 1px;
+    color: white;
+    padding: 6px 10px;
+    width: 30vw;
+    font-family: var(--ff);
+    font-size: var(--fs-search);
+}
+
+.searchbar:focus {
+    outline: none;
+}
+
+.btn-search{
+    cursor: pointer;
+    color: white;
+    text-decoration: none !important;
+    font-size: 1.5em;
+    margin-left: 2vw;
 }
 
 .zone-wrapper {
     max-width: 70vw;
     margin: 0 auto;
     display: grid;
-    gap: 1rem;
+    gap: .5rem;
     text-align: center;
     grid-template-columns: 1fr 1fr 1fr;
 }
@@ -90,7 +124,7 @@ body {
     background-color: var(--zonebg);
     border-radius: 10px;
     color: white;
-    padding: 1rem;
+    padding: .5rem;
     font-family: var(--ff);
     font-weight: var(--fw-bold);
     mix-blend-mode: hard-light;
@@ -116,5 +150,9 @@ body {
 
     .zone-wrapper{
         gap: 3rem;
+    }
+
+    .zone{
+        padding: 1rem;
     }
 }
