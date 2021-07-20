@@ -126,6 +126,7 @@ function getWeather(){
             let weatherName = data.weather[0].main;
             let weatherID = data.weather[0].id;
             let weatherDesc = data.weather[0].description;
+            console.log(weatherID, weatherName);
             selectWeatherIcon(weatherID, weatherName); 
         });
 
@@ -137,6 +138,10 @@ function kelvinToFahrenheit(tempK){
 
 function selectWeatherIcon(id, name){
     switch(name){
+        default:{
+            document.getElementById("weatherIcon").src = "http://openweathermap.org/img/wn/50d@2x.png";
+            break;
+        }
         case('Thunderstorm'):{
             document.getElementById("weatherIcon").src = "http://openweathermap.org/img/wn/11d@2x.png";
             break;
@@ -164,6 +169,22 @@ function selectWeatherIcon(id, name){
             break;
         }
     }
+}
+
+const input = document.getElementById("search").addEventListener("keyup", function(event){
+    event.preventDefault();
+    if(event.code === 13){
+        debugger;
+        //search();
+    }
+});
+
+function search(){
+    console.log('hey');
+    let query = document.getElementById('search').value;
+    console.log(query);
+    //document.getElementById('search').value='';
+    //window.location.href = "https://www.google.com/search?q=" + query;
 }
 
 getWeather();
