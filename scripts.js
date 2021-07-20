@@ -171,20 +171,11 @@ function selectWeatherIcon(id, name){
     }
 }
 
-const input = document.getElementById("search").addEventListener("keyup", function(event){
-    event.preventDefault();
-    if(event.code === 13){
-        debugger;
-        //search();
+function searchSubmit(e){
+    if(e.keyCode === 13){
+        var query = document.getElementById('search').value;
+        window.location.href = "https://www.google.com/search?q=" + query;
     }
-});
-
-function search(){
-    console.log('hey');
-    let query = document.getElementById('search').value;
-    console.log(query);
-    //document.getElementById('search').value='';
-    //window.location.href = "https://www.google.com/search?q=" + query;
 }
 
 getWeather();
