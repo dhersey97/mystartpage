@@ -173,9 +173,11 @@ function selectWeatherIcon(id, name){
 
 function searchSubmit(e){
     if(e.keyCode === 13){
-        var query = document.getElementById('search').value;
+        e.preventDefault();
+        var query = document.getElementById('search').value.replace(" ", "%20");        
         window.location.href = "https://www.google.com/search?q=" + query;
-    }
+        document.getElementById('search').value='';
+    }   
 }
 
 getWeather();
