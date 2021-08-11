@@ -16,6 +16,10 @@
     --fs-search: 1em;
 }
 
+img{
+    max-height: 100px;
+    max-width: 100px;
+}
 
 a {
     text-decoration: none;
